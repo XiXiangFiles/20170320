@@ -162,7 +162,7 @@
 
 				}
 			}
-			// -------------------------------------------------------------------------------------------------------------------------
+			// -------------------------------------------------------------------------------------------------------------------------內容
 		}
 		var url = window.location.toString();
 		var getnum=url.split('?');
@@ -175,14 +175,31 @@
 		$("<li/>", {"class":"Heritage_desc","text":result[getnum[1]].Heritage_desc}).appendTo(".content");
 
 	});
-	// $.cookie('favorite', 'myValue', { path:'/', expires:120000  });
+// ----------------------------------------------------------------------------------------cookie
 	$( document ).ready(function() {
 		var url = window.location.toString();
 		var num=url.split("?");
-		var x=$.cookie('name', 'value', { expires: 1, path: '/' });
-		console.log($.cookie('name'));
-		;
-
+		var cookie=$.cookie('favorite');
+		$('.add').click(function(){
+			if (cookie == null) {
+			$.cookie('favorite',num[1]+";" , { expires: 1, path: '/' });
+			}else{
+				cookie+=num[1]+";";
+				$.cookie('favorite',cookie , { expires: 1, path: '/' });
+			}
+			console.log($.cookie('favorite'));
+		});
+		
+	var select =$.cookie('favorite');
+	console.log(select);
+	var s_str=select.split(";");
+	console.log(s_str);
+	for (var i = 0; i < s_str.length; i++) {
+		$("<ul/>", {"class":i}).appendTo(".myfavorite ");
+		$("<li/>", {"class":"Heritage_class","text":data[s_str[i]].Heritage_class}).appendTo(".i");
+		$("<li/>", {"class":"Heritage_class","text":data[s_str[i]].Heritage_class}).appendTo(".i");
+		$("<li/>", {"class":"Heritage_desc","text":data[s_str[i]].Heritage_desc}).appendTo(".i");
+	}
 });
 	
 	
