@@ -94,17 +94,23 @@
 		for (var i = array.length - 1; i >= 0; i--) {//title
 			$("<li/>", {"class":i}).appendTo(".title ");
 			$("<a/>",{"href":"#","text":array[i]}).appendTo("."+i);
+			if (i==0) {
+				$("<li/>", {"class":"-1"}).appendTo(".title ");
+				$("<a/>",{"href":"detail.html","text":"查看我的最愛"}).appendTo(".-1");
+				$("<li/>", {"class":"clear"}).appendTo(".title ");
+			}
+			console.log("i="+i+"\n");
 		}
 		for (var i = 0 ;i < 7; i++) {//slide
 			var array=[];
 			array=object[i];
 			var url=getpicnum(array);
 			var split=url.split("?");
-			// --------------------------------------------------
+			// --------------------------------------------------slide
 			$("<li/>", {"class":"pic"+i}).appendTo(".slidepic ");
 			$("<a/>",{"href":"items.html?"+split[1],"class":"pic"+i+"_"}).appendTo(".pic"+i);
 			$("<img>",{"src":url}).appendTo(".pic"+i+"_");
-// ------------------------------------------------------------------slode
+// ------------------------------------------------------------------slide
 			var getnumofdata=contentselect(array);
 			console.log(getnumofdata);
 			for (var j = 1; j < 3; j++) {
@@ -162,7 +168,7 @@
 
 				}
 			}
-			// -------------------------------------------------------------------------------------------------------------------------內容
+// -------------------------------------------------------------------------------------------------------------------------內容
 		}
 		var url = window.location.toString();
 		var getnum=url.split('?');
