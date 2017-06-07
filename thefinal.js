@@ -193,7 +193,7 @@
 			$("<ul/>", {"class":"pull"+i}).appendTo(".pullselect");
 			for (var j = 0 ; j <array.length ; j++) {
 				$("<li/>", {"class":"sec-story"+array[j]}).appendTo(".pull"+i);
-				$("<a/>",{"href":"#","text":result[array[j]].Heritage_title}).appendTo("."+"sec-story"+array[j]);
+				$("<a/>",{"href":"items.html?"+array[j],"text":result[array[j]].Heritage_title}).appendTo("."+"sec-story"+array[j]);
 			}
 			
 		}
