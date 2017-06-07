@@ -16,6 +16,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
     background: transparent;
 }
 body {
+    
     line-height: 1;
 }
 ol, ul {
@@ -56,6 +57,7 @@ a:hover{
     color: blue;
 }
 
+
 .head{
     color: white;
     background-color: black;
@@ -75,7 +77,16 @@ a:hover{
     font-size: 40px;
     padding-top: 0.7%;
 }
-
+.pullselect a{
+    background-color: gray;
+    color: black;
+    font-size: 24px;
+}
+.pullselect a:hover{
+    background-color: gray;
+    color: white;
+    font-size: 24px;
+}
 .clear{
     clear: both;
 }

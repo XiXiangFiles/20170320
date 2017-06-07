@@ -1,5 +1,5 @@
 
-	var data;
+	var  data;
 
 	var Ruins=[];
 	var His_Building=[];
@@ -8,7 +8,6 @@
 	var Monuments=[];
 	var Antiquities=[];
 	var landscape=[];
-
 	var object=[Ruins,His_Building,Tra_Art,Folk,Monuments,Antiquities,landscape];
 	
 	function sort( num_array,  count ){
@@ -99,8 +98,10 @@
 				$("<a/>",{"href":"detail.html","text":"查看我的最愛"}).appendTo(".-1");
 				$("<li/>", {"class":"clear"}).appendTo(".title ");
 			}
-			console.log("i="+i+"\n");
+			// console.log("i="+i+"\n");
 		}
+
+
 		for (var i = 0 ;i < 7; i++) {//slide
 			var array=[];
 			array=object[i];
@@ -112,7 +113,7 @@
 			$("<img>",{"src":url}).appendTo(".pic"+i+"_");
 // ------------------------------------------------------------------slide
 			var getnumofdata=contentselect(array);
-			console.log(getnumofdata);
+
 			for (var j = 1; j < 3; j++) {
 				switch(i){
 					case 0:
@@ -165,14 +166,15 @@
 						$("<img>",{"src":result[getnumofdata[j]].Heritage_Image[0]}).appendTo(".pic"+i+j);
 						$("<li/>", {"class":"txt"+j ,"text":result[getnumofdata[j]].Heritage_desc}).appendTo(".landscape ");
 					break;
-
+					
 				}
 			}
 // -------------------------------------------------------------------------------------------------------------------------內容
 		}
+		try{
 		var url = window.location.toString();
 		var getnum=url.split('?');
-		for (var i = 0 ;i<result[getnum[1]].Heritage_Image.length; i++) {
+		for (var i = 0 ;i<result[getnum[1]].Heritage_Image.length-1; i++) {
 			$("<li/>", {"class":"pic"+i}).appendTo(".item-pic ");
 			$("<img>",{"src":result[getnum[1]].Heritage_Image[i]}).appendTo(".pic"+i);
 		}
@@ -180,33 +182,61 @@
 		$("<li/>", {"class":"Heritage_class","text":result[getnum[1]].Heritage_class}).appendTo(".content");
 		$("<li/>", {"class":"Heritage_desc","text":result[getnum[1]].Heritage_desc}).appendTo(".content");
 
+
+		}catch(e){
+
+		}
+
+		for (var i = 0 ;i < 7; i++) {// 顯示所有的細項
+			var array=[];
+			array=object[i];
+			$("<ul/>", {"class":"pull"+i}).appendTo(".pullselect");
+			for (var j = 0 ; j <array.length ; j++) {
+				$("<li/>", {"class":"sec-story"+array[j]}).appendTo(".pull"+i);
+				$("<a/>",{"href":"#","text":result[array[j]].Heritage_title}).appendTo("."+"sec-story"+array[j]);
+			}
+			
+		}
+
+		try{
+			$( document ).ready(function() {
+			var url = window.location.toString();
+			var num=url.split("?");
+			var cookie=$.cookie('favorite');
+			$('.add').click(function(){
+				if (cookie == null) {
+				$.cookie('favorite',num[1]+";" , { expires: 1, path: '/' });
+				}else{
+					cookie+=num[1]+";";
+					$.cookie('favorite',cookie , { expires: 1, path: '/' });
+				}
+				console.log($.cookie('favorite'));
+			});
+				
+			var select =$.cookie('favorite');
+			
+			var s_str=select.split(";");
+			// console.log("s_str="+s_str);
+			for (var i = 0; i < s_str.length-1; i++) {
+				console.log("s_str="+s_str[i]);
+			$("<ul/>", {"class":i}).appendTo(".myfavorite ");
+			$("<li/>", {"class":"Heritage_class","text":data[s_str[i]].Heritage_class}).appendTo(".i");
+			$("<li/>", {"class":"Heritage_class","text":data[s_str[i]].Heritage_class}).appendTo(".i");
+			$("<li/>", {"class":"Heritage_desc","text":data[s_str[i]].Heritage_desc}).appendTo(".i");
+		}
+	});
+		}catch(e){}
+
+
+
 	});
 // ----------------------------------------------------------------------------------------cookie
-	$( document ).ready(function() {
-		var url = window.location.toString();
-		var num=url.split("?");
-		var cookie=$.cookie('favorite');
-		$('.add').click(function(){
-			if (cookie == null) {
-			$.cookie('favorite',num[1]+";" , { expires: 1, path: '/' });
-			}else{
-				cookie+=num[1]+";";
-				$.cookie('favorite',cookie , { expires: 1, path: '/' });
-			}
-			console.log($.cookie('favorite'));
-		});
-		
-	var select =$.cookie('favorite');
-	console.log(select);
-	var s_str=select.split(";");
-	console.log(s_str);
-	for (var i = 0; i < s_str.length; i++) {
-		$("<ul/>", {"class":i}).appendTo(".myfavorite ");
-		$("<li/>", {"class":"Heritage_class","text":data[s_str[i]].Heritage_class}).appendTo(".i");
-		$("<li/>", {"class":"Heritage_class","text":data[s_str[i]].Heritage_class}).appendTo(".i");
-		$("<li/>", {"class":"Heritage_desc","text":data[s_str[i]].Heritage_desc}).appendTo(".i");
-	}
-});
+	
+
+
+
+
+	
 	
 	
 
