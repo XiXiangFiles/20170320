@@ -227,6 +227,58 @@
 	});
 		}catch(e){}
 
+		// ----------------------------------------------------------------------------------------------------動畫
+
+		$('.0 , .pullselect').hover(function(){
+			$('.pullselect').css({'display':'block'});
+			$('.pull0').css({'display':'block'});
+		},function(){
+			$('.pullselect').css({'display':'none'});
+			$('.pull0').css({'display':'none'});
+		});
+		$('.1 , .pullselect').hover(function(){
+			$('.pullselect').css({'display':'block'});
+			$('.pull1').css({'display':'block'});
+		},function(){
+			$('.pullselect').css({'display':'none'});
+			$('.pull1').css({'display':'none'});
+		});
+		$('.2 , .pullselect').hover(function(){
+			$('.pullselect').css({'display':'block'});
+			$('.pull2').css({'display':'block'});
+		},function(){
+			$('.pullselect').css({'display':'none'});
+			$('.pull2').css({'display':'none'});
+		});
+
+		$('.3 , .pullselect').hover(function(){
+			$('.pullselect').css({'display':'block'});
+			$('.pull3').css({'display':'block'});
+		},function(){
+			$('.pullselect').css({'display':'none'});
+			$('.pull3').css({'display':'none'});
+		});
+		$('.4 , .pullselect').hover(function(){
+			$('.pullselect').css({'display':'block'});
+			$('.pull4').css({'display':'block'});
+		},function(){
+			$('.pullselect').css({'display':'none'});
+			$('.pull4').css({'display':'none'});
+		});
+		$('.5 , .pullselect').hover(function(){
+			$('.pullselect').css({'display':'block'});
+			$('.pull5').css({'display':'block'});
+		},function(){
+			$('.pullselect').css({'display':'none'});
+			$('.pull5').css({'display':'none'});
+		});
+		$('.6 , .pullselect').hover(function(){
+			$('.pullselect').css({'display':'block'});
+			$('.pull6').css({'display':'block'});
+		},function(){
+			$('.pullselect').css({'display':'none'});
+			$('.pull6').css({'display':'none'});
+		});
 
 
 	});

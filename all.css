@@ -68,24 +68,68 @@ a:hover{
     margin: 0 auto;
 }
 .title li{
-    float: left;
+    float: right;
     text-decoration: none;
     padding: 1.5% 1.5% 0px 0px;
     font-size: 25px;
 }
 .title li:first-child{
+    float: left;
     font-size: 40px;
     padding-top: 0.7%;
+    /*position: relative;*/
+}
+.title li:nth-child(0){
+    /*position: relative;*/
+}
+.pullselect{
+    position: relative;
+    height: 400px;
+    border: solid 1px black;
+    top: -2%;
+    z-index: 10;
+    display: none;
 }
 .pullselect a{
-    background-color: gray;
+    /*background-color: gray;*/
     color: black;
     font-size: 24px;
 }
 .pullselect a:hover{
+    /*position: relative;*/
     background-color: gray;
     color: white;
-    font-size: 24px;
+    /*font-size: 24px;*/
+}
+.pullselect ul{
+    font-size: 20px;
+    max-width: 100%;  
+    list-style-type: circle;  
+    color: black;
+    margin-left: 3%;
+    display: none;
+}
+.pullselect ul li{
+    float: left;
+    overflow: hidden;
+    list-style-type: circle;
+    width: 150px;
+
+    padding: 5px 20px 0px 0px;
+    
+}
+.pullselect ul a{
+    font-size: 16px;
+}
+.slider {
+    position: relative;
+    top:-43%;
+    z-index: 9;
+}
+.slider img{
+    position: relative;
+    /*top:-100px;*/
+    z-index: 7;
 }
 .clear{
     clear: both;
