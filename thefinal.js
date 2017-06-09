@@ -171,7 +171,9 @@
 			}
 // -------------------------------------------------------------------------------------------------------------------------內容
 		}
-		try{
+
+
+		// try{
 		var url = window.location.toString();
 		var getnum=url.split('?');
 		for (var i = 0 ;i<result[getnum[1]].Heritage_Image.length-1; i++) {
@@ -182,10 +184,11 @@
 		$("<li/>", {"class":"Heritage_class","text":result[getnum[1]].Heritage_class}).appendTo(".content");
 		$("<li/>", {"class":"Heritage_desc","text":result[getnum[1]].Heritage_desc}).appendTo(".content");
 
+		console.log("YESSSS!!!"+url[1]);
 
-		}catch(e){
+		// }catch(e){
 
-		}
+		// }
 
 		for (var i = 0 ;i < 7; i++) {// 顯示所有的細項
 			var array=[];
@@ -229,52 +232,52 @@
 
 		// ----------------------------------------------------------------------------------------------------動畫
 
-		$('.0 , .pullselect').hover(function(){
+		$('.0 , .pull0').hover(function(){
 			$('.pullselect').css({'display':'block'});
-			$('.pull0').css({'display':'block'});
+			$('.pull0').css({'display':'block','height':'100%'});
 		},function(){
 			$('.pullselect').css({'display':'none'});
 			$('.pull0').css({'display':'none'});
 		});
-		$('.1 , .pullselect').hover(function(){
+		$('.1 , .pull1').hover(function(){
 			$('.pullselect').css({'display':'block'});
-			$('.pull1').css({'display':'block'});
+			$('.pull1').css({'display':'block','height':'100%'});
 		},function(){
 			$('.pullselect').css({'display':'none'});
 			$('.pull1').css({'display':'none'});
 		});
-		$('.2 , .pullselect').hover(function(){
+		$('.2 , .pull2').hover(function(){
 			$('.pullselect').css({'display':'block'});
-			$('.pull2').css({'display':'block'});
+			$('.pull2').css({'display':'block','height':'100%'});
 		},function(){
 			$('.pullselect').css({'display':'none'});
 			$('.pull2').css({'display':'none'});
 		});
 
-		$('.3 , .pullselect').hover(function(){
+		$('.3 , .pull3').hover(function(){
 			$('.pullselect').css({'display':'block'});
-			$('.pull3').css({'display':'block'});
+			$('.pull3').css({'display':'block','height':'100%'});
 		},function(){
 			$('.pullselect').css({'display':'none'});
 			$('.pull3').css({'display':'none'});
 		});
-		$('.4 , .pullselect').hover(function(){
+		$('.4 , .pull4').hover(function(){
 			$('.pullselect').css({'display':'block'});
-			$('.pull4').css({'display':'block'});
+			$('.pull4').css({'display':'block','height':'100%'});
 		},function(){
 			$('.pullselect').css({'display':'none'});
 			$('.pull4').css({'display':'none'});
 		});
-		$('.5 , .pullselect').hover(function(){
+		$('.5 , .pull5').hover(function(){
 			$('.pullselect').css({'display':'block'});
-			$('.pull5').css({'display':'block'});
+			$('.pull5').css({'display':'block','height':'100%'});
 		},function(){
 			$('.pullselect').css({'display':'none'});
 			$('.pull5').css({'display':'none'});
 		});
-		$('.6 , .pullselect').hover(function(){
+		$('.6 , .pull6').hover(function(){
 			$('.pullselect').css({'display':'block'});
-			$('.pull6').css({'display':'block'});
+			$('.pull6').css({'display':'block','height':'100%'});
 		},function(){
 			$('.pullselect').css({'display':'none'});
 			$('.pull6').css({'display':'none'});
@@ -284,11 +287,3 @@
 	});
 // ----------------------------------------------------------------------------------------cookie
 	
-
-
-
-
-	
-	
-	
-
