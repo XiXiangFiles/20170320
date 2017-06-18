@@ -246,7 +246,7 @@
 		try{
 		var url = window.location.toString();
 		var getnum=url.split('?');
-		for (var i = 0 ;i<result[getnum[1]].Heritage_Image.length-1; i++) {
+		for (var i = 0 ;i<result[getnum[1]].Heritage_Image.length; i++) {
 			$("<li/>", {"class":"pic"+i}).appendTo(".item-pic ");
 			$("<img>",{"src":result[getnum[1]].Heritage_Image[i]}).appendTo(".pic"+i);
 		}
@@ -257,10 +257,10 @@
 
 		for(var k=0;k<str.length-1;k++){
 			var text_h=result[getnum[1]].Heritage_desc;
-			text_h=text_h.split('：');
-			$("<li/>", {"class":"Heritage_desc" ,"text":text_h[k++]}).appendTo(".content ");
+			// text_h=text_h.split('：');
+			$("<li/>", {"class":"Heritage_desc" ,"text":str[k++]}).appendTo(".content ");
 			$("<br/>").appendTo(".content ");
-			$("<span/>", {"class":"Heritage_desc" ,"text":text_h[k++]}).appendTo(".content" );
+			$("<span/>", {"class":"Heritage_desc" ,"text":str[k++]}).appendTo(".content" );
 			$("<br/>").appendTo(".content ");
 		}
 		
